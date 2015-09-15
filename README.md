@@ -42,21 +42,21 @@
       position : true
     });
 
-####划过事件
-$('.btn4').alertTs({
-  act : 'hover',   //click, otherClick
-  face : 'left', 
-  cssStyle : 'blue',  //选取样式
-  left  : -10,
-  top   : -20,
-  aLoc  : 20,   //三角偏移距离
-  aSize : 14,   //三角形大小
-  css : {
-    fontSize : 20,
-    padding : "20px"
-  },
-  position : true
-});
+####鼠标事件
+    $('.btn4').alertTs({
+      act : 'hover',   //click, otherClick
+      face : 'left', 
+      cssStyle : 'blue',  //选取样式
+      left  : -10,
+      top   : -20,
+      aLoc  : 20,   //三角偏移距离
+      aSize : 14,   //三角形大小
+      css : {
+        fontSize : 20,
+        padding : "20px"
+      },
+      position : true
+    });
 
 ####带loading的使用
     LT.File.Js.load("http://h.pc.lietou-static.com/v1/js/plugins/jquery.alertTs.js", function () {
