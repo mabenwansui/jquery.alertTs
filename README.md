@@ -13,7 +13,7 @@
     close: false, //是否显示关闭
     content: "请添加内容",
     loading: null,
-    position: false, //最好设为true 为true时，弹框脱离布局限制以浏览器为标准进行位置对齐，为false时，弹框以元素位置为参照对齐。
+    position: false, //建议设为true true弹框脱离布局限制对齐，false以父级对齐。
     width: "auto", //"auto" "limit" number(例:30或30px) add[number](例:add5)
     minWidth: 50,     
     height: null,
@@ -34,7 +34,7 @@
     $('.btn1').alertTs({
       position : true
     });
-    
+
 ####向下并居中
     $('.btn2').alertTs({
       aLoc : 'center',
