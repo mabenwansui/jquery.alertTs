@@ -1,35 +1,6 @@
 # jquery.alertTs
 气泡弹出插件
 
-##全部参数
-    face: "top",
-    left: 0, //左边距  支持正负数
-    top: 0,
-    act: "", //触发事件 click, otherClick, hover
-    aSize: 6, //三角的大小
-    aLoc: "auto", //角的位置 数字型 或 auto
-    effect: "", //动画效果 fade
-    effectSpeed: 400, //动画时间
-    close: false, //是否显示关闭
-    content: "请添加内容",
-    loading: null,
-    position: false, //建议设为true true弹框脱离布局限制对齐，false以父级对齐。
-    width: "auto", //"auto" "limit" number(例:30或30px) add[number](例:add5)
-    minWidth: 50,     
-    height: null,
-    minHeight: 20,
-    cache: true,  //是否在页面里缓存，如果为false，则弹框消失后会删掉相应的dom
-    delay: 300, //鼠标划过延迟
-    css: null,
-    cssStyle: null,  //选择某种样式
-    timeout: null,   //多少秒后关闭
-    callback: { //回调 所有的this都是类的本身
-      init: function () {},
-      show: function () {},
-      beforeShow: function () {},
-      hide: function () {}
-    }
-
 ####简单使用
     $('.btn1').alertTs({
       position : true
@@ -57,6 +28,35 @@
       },
       position : true
     });
+
+####全部参数
+    face: "top",
+    left: 0, //左边距  支持正负数
+    top: 0,
+    act: "", //触发事件 click, otherClick, hover
+    aSize: 6, //三角的大小
+    aLoc: "auto", //角的位置 数字型 或 auto
+    effect: "", //动画效果 fade
+    effectSpeed: 400, //动画时间
+    close: false, //是否显示关闭
+    content: "请添加内容",
+    loading: null,
+    position: false, //建议设为true true弹框脱离布局限制对齐，false以父级对齐。
+    width: "auto", //"auto" "limit" number(例:30或30px) add[number](例:add5)
+    minWidth: 50,     
+    height: null,
+    minHeight: 20,
+    cache: true,  //是否在页面里缓存，如果为false，则弹框消失后会删掉相应的dom
+    delay: 300, //鼠标划过延迟
+    css: null,
+    cssStyle: null,  //选择某种样式
+    timeout: null,   //多少秒后关闭
+    callback: { //回调 所有的this都是类的本身
+      init: function () {},
+      show: function () {},
+      beforeShow: function () {},
+      hide: function () {}
+    }
 
 ####带loading的使用
     LT.File.Js.load("http://h.pc.lietou-static.com/v1/js/plugins/jquery.alertTs.js", function () {
