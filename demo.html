@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script src="http://lib.sinaapp.com/js/jquery/1.7.2/jquery.min.js"></script>
+<script src="jquery.alertTs.js"></script>
+<style>
+.box { padding:100px;}
+.box input{margin:0px 30px;}
+</style>
+</head>
+<body>
+<div class="box">
+  <input type="button" class="btn1" value="普通">
+  <input type="button" class="btn2" data-title="我的内容在按钮上" value="向下并居中">
+  <input type="button" class="btn3" value="点击事件">
+  <input type="button" class="btn4" value="划过事件">
+  <input type="button" class="btn5" value="点空白处消失">
+</div>
+<script>
+
+$('.btn1').alertTs({
+  position : true
+});
+
+$('.btn2').alertTs({
+  aLoc : 'center',
+  face : 'bottom',
+  position : true
+});
+
+$('.btn3').alertTs({
+  act : 'click',
+  cssStyle : 'blue',
+  position : true
+});
+
+$('.btn4').alertTs({
+  act : 'hover',
+  face : 'left',
+  cssStyle : 'blue',
+  left  : -10,
+  top   : -20,
+  aLoc  : 20,   //三角偏移距离
+  aSize : 14,   //三角形大小
+  css : {
+    fontSize : 20,
+    padding : "20px"
+  },
+  position : true
+});
+
+$('.btn5').alertTs({
+  act : 'otherClick',
+  aLoc  : 'right,-10',
+  position : true
+});
+</script>
+
+</body>
+</html>
