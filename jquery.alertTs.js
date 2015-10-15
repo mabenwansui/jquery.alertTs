@@ -14,8 +14,8 @@
     $.alertTs.error(id,msg,[options,func]);    出错提示
     $.alertTs.parent(element);                 传入的是helper内的元素，返回helper的self
 */
-;
-(function ($, window) {
+var _i=0;
+;(function ($, window) {
   "use strict";
   var pluginName = "alertTs",
     classname = "alertTs-js",
@@ -124,10 +124,10 @@
     };
     public_.show = function (notString) {
       self.options.callback.beforeShow.call(self);
-      if (self.visible) return self;
+      self.refresh();
+      if (self.visible) return self;      
       self.options.position && self.play();
       self.visible = true;
-      if (!/\brefresh\b/.test(notString)) self.refresh("visibleOrHidden");
       switch (self.options.effect) {
         case "fade":
           self.helper.show().stop().css("opacity", 0).animate({
@@ -185,7 +185,7 @@
       };
       self.removeTag();
     };
-    public_.play = function () {
+    public_.play = function () {      
       if (!timer && self.options.position) {
         timer = setInterval(function () {
           self && self.refresh("reWidth,reArrow")
@@ -269,7 +269,6 @@
       };
 
       self.createElement.init();
-      self.resize.reTag();
       self.element.data('plugin_' + pluginName, self);
       Groups.addto(self);
       self.options.timeout && (self.timeout = setTimeout(function () {
@@ -282,10 +281,8 @@
       init: function () {
         this.createCss();
         self.options.position ? this.createBox() : this.createBoxForTag();
-        self.resize.reWidth();
         self.options.aSize && this.createArrow();
         self.options.close && this.createClose();
-        self.options.position && self.play();
         self.options.loading && this.createLoading();
         self.helper.data('plugin_' + pluginName, self.element);
       },
